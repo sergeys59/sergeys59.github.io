@@ -6,10 +6,12 @@
     <title>Sherlock</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-
+	<script>
+       var unityInstance = UnityLoader.instantiate("unityContainer", "%UNITY_WEBGL_BUILD_URL%");
+	</script>
   </head>
   <body>
-    <div id="unity-container" style="padding: 0px; position: absolute; height:100vh; width:100vw;">
+    <div id="unity-container" style="padding: 0px; position: absolute; height:100vh; width:100vw;" onclick="unityInstance.SetFullscreen(1)">
       <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo">
@@ -106,9 +108,7 @@
         });
       };
       document.body.appendChild(script);
-	  
-	  var myWidth = document.innerWidth;
-	  var myHeight = document.innerHeight;
+	 
     </script>
   </body>
 </html>
