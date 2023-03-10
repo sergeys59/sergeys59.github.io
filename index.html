@@ -19,12 +19,21 @@
       </div>
       <div id="unity-warning"> </div>
     </div>
+	
+	<script>
+    if(UnityLoader.SystemInfo.mobile == true)
+	{
+        ScreenOrientation.lock('landscape');
+    }
+	</script>
+
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var warningBanner = document.querySelector("#unity-warning");
+	  
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -106,6 +115,7 @@
         });
       };
       document.body.appendChild(script);
+	  unityInstance.SetFullscreen(1);
     </script>
   </body>
 </html>
